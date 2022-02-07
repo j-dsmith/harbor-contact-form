@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --font-secondary: "Archer", Arial, Helvetica, sans-serif;
+  --font-primary: "Roboto", Arial, Helvetica, sans-serif;
+  --font-size-200: 0.75rem;
+  --font-size-300: 0.875rem;
+  --font-size-400: 1rem;
+  --font-size-500: 1.125rem;
+  --font-size-600: 1.375rem;
+  --font-size-700: 2rem;
+  --font-size-900: 3.5rem;
+
+  --color-blue-200: hsl(203, 73%, 48%);
+  --color-blue-300: hsl(204, 97%, 40%);
+  --color-blue-400: hsl(203, 73%, 39%);
+  --color-blue-500: hsl(204, 97%, 30%);
+
+  --color-gray-200: hsl(220, 11%, 95%);
+  --color-gray-300: hsl(220, 7%, 84%);
+  --color-gray-600: hsl(217, 6%, 40%);
+  --color-gray-900: hsl(233, 16%, 21%);
+
+  --color-green-400: hsl(120, 93%, 32%);
+  --color-red-400: hsl(0, 79%, 63%);
+}
+
+html,
+body {
+  height: 100%;
+  font-family: var(--font-primary);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+.contact-page-section {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

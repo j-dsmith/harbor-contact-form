@@ -1,0 +1,129 @@
+#form-section {
+  align-items: center;
+}
+
+.form-heading {
+  text-align: center;
+  font-size: var(--font-size-700);
+  color: #1b76ae;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+form {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  width: 100%;
+  font-size: var(--font-size-400);
+}
+
+.form-fields {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "name name"
+    "email phone-number"
+    "company-name type-of-business"
+    "captcha .";
+  row-gap: 1.5rem;
+  column-gap: 2.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.group-active {
+  transform: translateY(-100%);
+}
+
+.required-field {
+  color: #eb5656;
+  padding-left: 0.5rem;
+}
+
+.required-field-message {
+  color: #eb5656;
+  padding-left: 0.5rem;
+  font-size: var(--font-size-300);
+  margin-top: 0.5rem;
+  /* position: absolute;
+  bottom: 0;
+  transform: translateY(1.5rem); */
+}
+
+label {
+  font-weight: 300;
+  line-height: 1.3;
+  padding-left: 0.5rem;
+  /* position: absolute;
+  top: 0; */
+  transition: all 300ms ease-in-out;
+  /*   margin-bottom: .5rem; */
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #d3d5d9;
+  line-height: 1.5;
+  /*   transition: padding 0.3s ease-in-out; */
+  padding: 6px 0 6px 6px;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+  background-color: #f0f1f3;
+  border-bottom: 1px solid var(--color-blue-200);
+}
+
+input:hover {
+  background-color: #f0f1f3;
+  padding: 6px 0 6px 6px;
+}
+
+#name-group {
+  grid-area: name;
+}
+
+#email-group {
+  grid-area: email;
+}
+
+#phone-group {
+  grid-area: phone-number;
+}
+
+#company-name-group {
+  grid-area: company-name;
+}
+
+#business-type-group {
+  grid-area: type-of-business;
+}
+
+.btn {
+  background-color: var(--color-blue-300);
+  padding: 1rem 3.75rem;
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  font-size: var(--font-size-200);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.25rem;
+  display: block;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--color-blue-500);
+}
+
+.btn-submit {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+}
