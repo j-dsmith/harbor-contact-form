@@ -24,8 +24,7 @@ form {
   grid-template-areas:
     "name name"
     "email phone-number"
-    "company-name type-of-business"
-    "captcha .";
+    "company-name type-of-business";
   row-gap: 1.5rem;
   column-gap: 2.25rem;
 }
@@ -131,5 +130,27 @@ form.ng-invalid.ng-submitted > .form-fields > .form-group > input.ng-invalid {
 
 .btn-submit {
   display: block;
-  margin: 1.5rem auto 0 auto;
+  margin: 2.25rem auto 0 auto;
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  .form-fields {
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "email"
+      "phone-number"
+      "company-name"
+      "type-of-business";
+  }
+
+  form {
+    padding: 0;
+  }
+
+  .btn-submit {
+    width: 100%;
+  }
 }

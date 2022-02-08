@@ -48,3 +48,21 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
+@media screen and (max-width: 1200px) {
+  .contact-page-section {
+    padding: 0 min(3rem, 10%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contact-page-section {
+    padding: 2rem;
+  }
+}
