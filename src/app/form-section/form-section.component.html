@@ -2,17 +2,27 @@
   <h3 class="form-heading">How can we help?</h3>
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="form-fields">
+      <!-- Name -->
       <div class="form-group" id="name-group">
         <label for="name-input" id="name-label"
           >Name<span class="required-field">*</span></label
         >
-        <input type="text" name="name" id="name-input" formControlName="name" />
+        <input
+          type="text"
+          name="name"
+          id="name-input"
+          formControlName="name"
+          required
+        />
         <span
           class="required-field-message"
-          *ngIf="(!name?.valid && name?.touched) || formInvalid"
+          *ngIf="
+            (!name?.valid && name?.touched) || (formInvalid && name?.invalid)
+          "
           >This field is required.</span
         >
       </div>
+      <!-- Email -->
       <div class="form-group" id="email-group">
         <label for="email-input"
           >Email<span class="required-field">*</span></label
@@ -22,35 +32,43 @@
           name="email"
           id="email-input"
           formControlName="email"
+          required
         />
         <span
           class="required-field-message"
-          *ngIf="(email?.errors?.['required'] && email?.touched) || formInvalid"
+          *ngIf="(email?.errors?.['required'] && email?.touched) || (formInvalid && email?.errors?.['required'])"
           >This field is required.</span
         >
         <span
           class="required-field-message"
-          *ngIf="(email?.errors?.['email'] && email?.touched) || formInvalid"
+          *ngIf="(email?.errors?.['email'] && email?.touched) || (formInvalid && email?.errors?.['email'])"
           >Please enter a valid email address.</span
         >
       </div>
-
+      <!-- Phone Number -->
       <div class="form-group" id="phone-group">
         <label for="phone-input"
           >Phone Number<span class="required-field">*</span></label
         >
         <input
-          type="text"
+          type="tel"
           name="phone"
           id="phone-input"
           formControlName="phoneNumber"
+          required
         />
         <span
           class="required-field-message"
-          *ngIf="(!phoneNumber?.valid && phoneNumber?.touched) || formInvalid"
+          *ngIf="(phoneNumber?.errors?.['required'] && phoneNumber?.touched) || (formInvalid && phoneNumber?.errors?.['required'])"
           >This field is required.</span
         >
+        <span
+          class="required-field-message"
+          *ngIf="(phoneNumber?.errors?.['pattern'] && phoneNumber?.touched) || (formInvalid && phoneNumber?.errors?.['pattern'])"
+          >Phone format: ###-###-####</span
+        >
       </div>
+      <!-- Company Name -->
       <div class="form-group" id="company-name-group">
         <label for="company-name-input"
           >Company Name<span class="required-field">*</span></label
@@ -60,6 +78,7 @@
           name="company-name"
           id="company-name-input"
           formControlName="companyName"
+          required
         />
         <span
           class="required-field-message"
@@ -67,6 +86,7 @@
           >This field is required.</span
         >
       </div>
+      <!-- Type of Business -->
       <div class="form-group" id="business-type-group">
         <label for="business-type-input">Type of Business</label>
         <input

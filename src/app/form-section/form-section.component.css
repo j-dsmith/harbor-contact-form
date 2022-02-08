@@ -48,7 +48,7 @@ form {
 .required-field-message {
   color: #eb5656;
   padding-left: 0.5rem;
-  font-size: var(--font-size-300);
+  font-size: var(--font-size-200);
   margin-top: 0.5rem;
   /* position: absolute;
   bottom: 0;
@@ -83,6 +83,12 @@ input:focus {
 input:hover {
   background-color: #f0f1f3;
   padding: 6px 0 6px 6px;
+  border-bottom: 1px solid var(--color-blue-200);
+}
+
+input.ng-invalid.ng-touched,
+form.ng-invalid.ng-submitted > .form-fields > .form-group > input.ng-invalid {
+  border-bottom: 1px solid var(--color-red-400);
 }
 
 #name-group {

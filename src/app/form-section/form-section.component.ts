@@ -9,7 +9,10 @@ export class FormSectionComponent implements OnInit {
   contactForm = new FormGroup({
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    phoneNumber: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl('', [
+      Validators.required,
+      Validators.pattern('[0-9]{3}-[0-9]{3}-[0-9]{4}'),
+    ]),
     companyName: new FormControl('', Validators.required),
     businessType: new FormControl(''),
   });
@@ -29,7 +32,6 @@ export class FormSectionComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
-    console.log(this.contactForm);
     if (this.contactForm.status === 'VALID') {
       this.contact = {
         name: this.contactForm.value.name,
